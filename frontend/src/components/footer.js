@@ -40,7 +40,9 @@ const Footer = () => {
       <Write>
         Created by{" "}
         <span>
-          <a href="https://yoni-portfolio.netlify.app">Yoni Kosiner</a>
+          <a href="https://yoni-portfolio.netlify.app" target=" _blank">
+            Yoni Kosiner
+          </a>
         </span>
       </Write>
       <CopyRightYear>©2020</CopyRightYear>

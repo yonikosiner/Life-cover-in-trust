@@ -96,7 +96,13 @@ const Image = styled.div`
   width: 100%;
   top: -60%;
   left: 150%;
+  transition: 0.4s ease all;
   z-index: 99;
+  cursor: pointer;
+  object-fit: cover;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 const Hero = () => {
   // Scroll down to description
