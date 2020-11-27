@@ -4,7 +4,7 @@ import styled from "styled-components"
 // Div around all contact to place it at the bottom
 const ContactWrapper = styled.div`
   position: absolute;
-  bottom: -573%;
+  bottom: -580%;
   left: 0;
   height: 100%;
   width: 100%;

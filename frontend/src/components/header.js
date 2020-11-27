@@ -26,6 +26,7 @@ const Links = styled.li`
   font-size: 30px;
   width: 30%;
   display: none;
+  overflow: hidden;
   div {
     color: #fff;
     border: none;
@@ -36,6 +37,27 @@ const Links = styled.li`
     display: block;
   }
 `
+
+const Links2 = styled.li`
+  display: block;
+  position: absolute;
+  right: -6%;
+
+  top: 30%;
+  font-size: 30px;
+  width: 30%;
+  display: none;
+  div {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  @media (min-width: 1080px) {
+    display: block;
+  }
+`
+
 const MenuWrapper = styled.div`
   position: absolute;
   top: 20%;
@@ -116,7 +138,7 @@ const Header = () => {
               About
             </div>
           </Links>
-          <Links>
+          <Links2>
             <div
               className="underline"
               onClick={contactUs}
@@ -124,7 +146,7 @@ const Header = () => {
             >
               Contact
             </div>
-          </Links>
+          </Links2>
         </ul>
       </MenuNav>
     </NavBar>

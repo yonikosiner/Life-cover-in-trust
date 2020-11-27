@@ -22,11 +22,11 @@ const Layout = ({ children }) => {
   //   if (location === "http://localhost:8000/#aboutsection") {
   //   }
   // }
-  const setHome = () => {
-    window.location.href = "/#home"
-  }
-  // window.addEventListener("scroll", aboutSection, { passive: true })
-  window.onload = setHome
+  // const setHome = () => {
+  //   window.location.href = "/#home"
+  // }
+  // // window.addEventListener("scroll", aboutSection, { passive: true })
+  // window.onload = setHome
   return (
     <>
       <GlobalStyle />

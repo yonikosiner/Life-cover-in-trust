@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Contact from "./contact"
+import plantMoney from "../images/plant.jpg"
 
 const Center = styled.div`
   @media (min-width: 1080px) {
@@ -38,6 +38,7 @@ const CenterDescription = styled.div`
 // First p tag of the website
 const Description = styled.p`
   font-size: 20px;
+  width: 100%;
 `
 
 const ButtonCenter = styled.div`
@@ -89,6 +90,14 @@ const ContactUs = styled.button`
   }
 `
 
+// Image
+const Image = styled.div`
+  position: absolute;
+  width: 100%;
+  top: -60%;
+  left: 150%;
+  z-index: 99;
+`
 const Hero = () => {
   // Scroll down to description
   const readMore = () => {
@@ -112,6 +121,10 @@ const Hero = () => {
           regular income <br />
           if you pass away during the plan term.
         </Description>
+
+        <Image>
+          <img src={plantMoney} alt="Plant money" />
+        </Image>
       </CenterDescription>
       <ButtonCenter>
         <ReadMore onClick={readMore}>Read More</ReadMore>
