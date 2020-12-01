@@ -9,7 +9,7 @@ const ContactWrapper = styled.div`
   height: 100%;
   width: 100%;
   @media (min-width: 1080px) {
-    bottom: -289%;
+    bottom: -320%;
   }
 `
 
@@ -77,6 +77,7 @@ const Submit = styled.input`
   cursor: pointer;
   color: #fff;
   transition: 0.3s ease all;
+  padding: 5px;
   &:hover {
     background-color: #23d997;
     transform: scale(1.2);
@@ -94,6 +95,7 @@ const Contact = () => {
       <InputWrapper method="POST" action="http://localhost:3000/contact">
         <Input type="text" name="name" placeholder="Name:" />
         <Input type="email" name="email" placeholder="Email:" />
+        <Input type="text" name="phone" placeholder="Phone:" />
         <Message
           type="text"
           name="message"

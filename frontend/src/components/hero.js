@@ -105,7 +105,7 @@ const Image = styled.div`
   }
 `
 const Hero = () => {
-  // Scroll down to description
+  // Scroll down to about section
   const readMore = () => {
     const read = document.getElementById("description")
     read.scrollIntoView({ behavior: "smooth" })
