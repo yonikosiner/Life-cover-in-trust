@@ -39,7 +39,7 @@ app.post("/contact", urlencodedParser, function (req, res) {
 
     // send mail with defined transport object
     const info = await transporter.sendMail({
-      from: '"Yoni Kosiner" <yoni@kosiner.co.uk>', // sender address
+      from: '"Yoni Kosiner" <ykosiner@gmail.com>', // sender address
       to: EMAIL_SEND, // list of receivers
       subject: `Contact from life cover in trust from: ${req.body.name}`, // Subject line
       text: `
