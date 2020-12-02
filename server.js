@@ -17,7 +17,6 @@ app.get("/", (req, res) => {});
 app.get("/contact", (req, res) => {
   res.send("Contact");
 });
-// Test for git
 
 app.use(bodyParser.urlencoded({ extended: false }));
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
