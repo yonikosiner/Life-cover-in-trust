@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import './header.css'
 
 const NavBar = styled.nav`
   background-color: #333333;
@@ -44,16 +45,8 @@ const Links2 = styled.li`
   right: -6%;
 
   top: 30%;
-  font-size: 30px;
-  width: 30%;
-  display: none;
-  div {
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    outline: none;
-  }
-  @media (min-width: 1080px) {
+  font-size: 30px; width: 30%; display: none; div { color: #fff; border: none; cursor: pointer; outline: none; }
+          @media (min-width: 1080px) {
     display: block;
   }
 `
@@ -71,31 +64,6 @@ const MenuNav = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 100px;
-  .underline {
-    display: inline;
-    position: relative;
-    overflow: hidden;
-  }
-  .underline:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    width: 0;
-    bottom: -5px;
-    background: #23d997;
-    height: 4px;
-    transition-property: width;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-  }
-  .underline:hover:after,
-  .underline:focus:after,
-  .underline:active:after {
-    left: 0;
-    right: auto;
-    width: 100%;
-  }
 `
 
 const Menu = styled.div`
