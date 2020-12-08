@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 // Boddy parser to see body of the text input from the contact form
-// test
 const bodyParser = require("body-parser");
 // Use node mailer so can send email's
 const nodemailer = require("nodemailer");
