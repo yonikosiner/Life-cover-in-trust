@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 // Div around all contact to place it at the bottom
 const ContactWrapper = styled.div`
-  position: absolute;
-  bottom: -580%;
+  position: static;
+  margin-top: 10%;
   left: 0;
   height: 100%;
   width: 100%;
@@ -76,6 +76,7 @@ const Submit = styled.input`
   background: none;
   cursor: pointer;
   color: #fff;
+  outline: none;
   transition: 0.3s ease all;
   padding: 5px;
   &:hover {

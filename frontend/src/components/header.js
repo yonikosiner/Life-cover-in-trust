@@ -1,15 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
+import {Link} from 'gatsby'
 import styled from "styled-components"
 import './header.css'
 
 const NavBar = styled.nav`
   background-color: #333333;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 139px;
   top: 0;
   left: 0;
-  position: sticky;
+  z-index: 100;
   span {
     display: inline-block;
     cursor: pointer;
@@ -55,6 +56,7 @@ const MenuWrapper = styled.div`
   position: absolute;
   top: 20%;
   right: 5%;
+  z-index: 200;
   @media (min-width: 1080px) {
     display: none;
   }
@@ -75,18 +77,75 @@ const Menu = styled.div`
   background-color: #fff;
 `
 
+const Inside = styled.div`
+  .inside {
+    position: absolute;
+    right: 0;
+    width: 80%;
+    height: 530%;
+    background-color: #555;
+    -webkit-animation: linear alternate;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 0.2s;
+    @keyframes run {
+      from {
+        opacity: 0;
+        left: 90%;
+      }
+      to {
+        opacity: 1;
+        left: 200px;
+      }
+    }
+  }
+  button {
+    background: none;
+    color: #fff;
+    outline: none;
+    width: 50%;
+    margin-top: 10%;
+    border: none;
+    background-color: #23d997;
+  }
+  .block {
+    display: block;
+  }
+  .none {
+    display: none;
+  }
+  .links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+  }
+`
+
+
 const Header = () => {
   const aboutUs = () => {
+    setIsOpen(!isOpen)
     const read = document.getElementById("description")
     read.scrollIntoView({ behavior: "smooth" })
   }
   const contactUs = () => {
+    setIsOpen(!isOpen)
     const contact = document.getElementById("contact")
     contact.scrollIntoView({ behavior: "smooth" })
   }
+  // Hambuger menu
+  // Menuy state
+  const [isOpen, setIsOpen] = useState(false)
+  // Togle state
+  const menuOpen = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <NavBar>
-      <MenuWrapper>
+      <MenuWrapper onClick={menuOpen}>
         <Menu></Menu>
         <br />{" "}
         <span>
@@ -94,6 +153,14 @@ const Header = () => {
         </span>
         <br /> <Menu></Menu>
       </MenuWrapper>
+      <Inside>
+        <div className={isOpen ? "inside" : ""}>
+          <div className="links"> 
+            <button className={isOpen ? "block" : "none"} onClick={aboutUs}>About</button>
+            <button className={isOpen ? "block" : "none"} onClick={contactUs}>Contact</button>
+          </div>
+        </div>
+      </Inside>
       <MenuNav>
         <ul>
           <Links>

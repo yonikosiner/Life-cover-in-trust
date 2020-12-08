@@ -5,7 +5,16 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Roboto", sans-serif;
         overflow-x: hidden;
         background-color: #1b1b1b;
-        color: #fff;
+        color: #fff
+    }
+    html {
+        -moz-oxs-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+        min-height: 300vh;
+        height:100%;
+        min-width: 300px;
+        overflow-x: hidden;
     }
 `
 

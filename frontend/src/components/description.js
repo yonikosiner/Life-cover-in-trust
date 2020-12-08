@@ -2,14 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 const DescriptionWrapper = styled.div`
-  position: absolute;
-  bottom: -478%;
+  position: static;
+  margin-top: 160%;
   @media (min-width: 1080px) {
-    bottom: -220%;
-    left: 0;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
   }
 `
 

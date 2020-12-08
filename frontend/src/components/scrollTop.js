@@ -16,7 +16,7 @@ const Up = styled.img`
 const Down = styled.button`
   display: none;
   position: fixed;
-  bottom: 3%;
+  bottom: 4%;
   right: 90px;
   z-index: 99;
   font-size: 18px;
@@ -29,6 +29,9 @@ const Down = styled.button`
   padding: 5px;
   transition: 0.3s ease all;
   &:hover {
+    background-color: #23d997;
+  }
+  @media (max-width: 769px) {
     background-color: #23d997;
   }
 `

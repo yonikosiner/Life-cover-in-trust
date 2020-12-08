@@ -6,9 +6,8 @@ const FooterWrapper = styled.footer`
   left: 0;
   width: 100%;
   background: #333333;
-  bottom: -649%;
   @media (min-width: 1080px) {
-    bottom: -320%;
+    /* bottom: -320%; */
   }
 `
 

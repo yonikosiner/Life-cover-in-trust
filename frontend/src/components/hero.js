@@ -3,11 +3,14 @@ import styled from "styled-components"
 import plantMoney from "../images/plant.jpg"
 
 const Center = styled.div`
+  position: static;
+  margin-top: 40%;
   @media (min-width: 1080px) {
+    top: -20%;
     position: absolute;
-    top: 35%;
     float: left;
     display: flex;
+    align-items: center;
   }
 `
 
