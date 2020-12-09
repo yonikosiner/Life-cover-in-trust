@@ -23,3 +23,7 @@
     right: auto;
     width: 100%;
   }
+
+  .stick {
+    position: fixed;
+  }

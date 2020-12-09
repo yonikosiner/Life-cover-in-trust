@@ -1,22 +1,28 @@
 import React, { useState } from "react"
-import {Link} from 'gatsby'
 import styled from "styled-components"
 import './header.css'
+import {
+  isMobile
+} from "react-device-detect"
 
 const NavBar = styled.nav`
   background-color: #333333;
-  position: fixed;
   width: 100%;
   height: 139px;
   top: 0;
   left: 0;
   z-index: 100;
+  position: fixed;
   span {
     display: inline-block;
     cursor: pointer;
     width: 45px;
     height: 4px;
     background-color: #23d997;
+    outline: none;
+  }
+  @media (max-width: 769px) {
+    position: absolute;
   }
 `
 
@@ -75,11 +81,13 @@ const Menu = styled.div`
   height: 4px;
   margin-top: 10px;
   background-color: #fff;
+  outline: none;
 `
 
 const Inside = styled.div`
   .inside {
-    position: absolute;
+    overflow: hidden;
+    position: fixed;
     right: 0;
     width: 80%;
     height: 530%;
@@ -90,6 +98,7 @@ const Inside = styled.div`
     @keyframes run {
       from {
         opacity: 0;
+        transform: scale(0.1);
         left: 90%;
       }
       to {
@@ -119,20 +128,21 @@ const Inside = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
-    top: 15%;
+    margin-top: 30%;
   }
 `
 
 
 const Header = () => {
   const aboutUs = () => {
-    setIsOpen(!isOpen)
+    // Check if user is on mobile
+    {isMobile ? setIsOpen(!isOpen) : ""}
     const read = document.getElementById("description")
     read.scrollIntoView({ behavior: "smooth" })
   }
   const contactUs = () => {
-    setIsOpen(!isOpen)
+    // Check if the user is on mobile 
+    {isMobile ? setIsOpen(!isOpen) : ""}
     const contact = document.getElementById("contact")
     contact.scrollIntoView({ behavior: "smooth" })
   }
@@ -144,7 +154,7 @@ const Header = () => {
     setIsOpen(!isOpen)
   }
   return (
-    <NavBar>
+    <NavBar id="nav" className={isOpen ? "stick" : ""}> 
       <MenuWrapper onClick={menuOpen}>
         <Menu></Menu>
         <br />{" "}

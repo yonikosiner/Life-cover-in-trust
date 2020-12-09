@@ -16,24 +16,18 @@ const Up = styled.img`
 const Down = styled.button`
   display: none;
   position: fixed;
-  bottom: 4%;
+  bottom: 3%;
   right: 90px;
   z-index: 99;
   font-size: 18px;
   cursor: pointer;
   border: none;
   outline: none;
-  background: none;
+  background: #23d997;
   color: #ffff;
   border: 5px solid #23d997;
   padding: 5px;
   transition: 0.3s ease all;
-  &:hover {
-    background-color: #23d997;
-  }
-  @media (max-width: 769px) {
-    background-color: #23d997;
-  }
 `
 const ScrollTop = () => {
   // When the user scrolls down 20px from the top of the document, show the button

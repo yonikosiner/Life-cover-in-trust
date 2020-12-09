@@ -5,9 +5,6 @@ const DescriptionWrapper = styled.div`
   position: static;
   margin-top: 160%;
   @media (min-width: 1080px) {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
   }
 `
 
