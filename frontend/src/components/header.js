@@ -1,9 +1,7 @@
-import React, { useState } from "react"
+import { func } from "prop-types"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import './header.css'
-import {
-  isMobile
-} from "react-device-detect"
 
 const NavBar = styled.nav`
   background-color: #333333;
@@ -13,6 +11,7 @@ const NavBar = styled.nav`
   left: 0;
   z-index: 100;
   position: fixed;
+  overflow-x: hidden;
   span {
     display: inline-block;
     cursor: pointer;
@@ -50,10 +49,15 @@ const Links2 = styled.li`
   display: block;
   position: absolute;
   right: -6%;
-
   top: 30%;
-  font-size: 30px; width: 30%; display: none; div { color: #fff; border: none; cursor: pointer; outline: none; }
-          @media (min-width: 1080px) {
+  font-size: 30px; width: 30%; display: none; 
+  div { 
+    color: #fff; 
+    border: none; 
+    cursor: pointer;
+     outline: none; 
+  }
+  @media (min-width: 1080px) {
     display: block;
   }
 `
@@ -134,15 +138,47 @@ const Inside = styled.div`
 
 
 const Header = () => {
+
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+        width: undefined,
+        height: undefined,
+    });
+
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          height: window.innerHeight,
+          width: window.innerWidth,
+        });
+      }
+      window.addEventListener('resize', handleResize)
+
+      handleResize()
+
+      return () => window.removeEventListener('resize')
+    }, [])
+
+    return windowSize;
+  }
+
+  const size = useWindowSize()
+
   const aboutUs = () => {
     // Check if user is on mobile
-    {isMobile ? setIsOpen(!isOpen) : ""}
+    // If on mobile close the hambguer menu when click on link
+    {size.width < 769 && (
+      setIsOpen(!isOpen)
+    )}
     const read = document.getElementById("description")
     read.scrollIntoView({ behavior: "smooth" })
   }
   const contactUs = () => {
     // Check if the user is on mobile 
-    {isMobile ? setIsOpen(!isOpen) : ""}
+    // If on mobile close the hambuger meny when click on link
+    {size.width < 769 && (
+      setIsOpen(!isOpen)
+    )}
     const contact = document.getElementById("contact")
     contact.scrollIntoView({ behavior: "smooth" })
   }
@@ -154,7 +190,7 @@ const Header = () => {
     setIsOpen(!isOpen)
   }
   return (
-    <NavBar id="nav" className={isOpen ? "stick" : ""}> 
+  <NavBar style={isOpen ? {position: "fixed"} : {position: "absolute"}}> 
       <MenuWrapper onClick={menuOpen}>
         <Menu></Menu>
         <br />{" "}

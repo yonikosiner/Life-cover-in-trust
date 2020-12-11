@@ -4,7 +4,11 @@ import styled from "styled-components"
 const DescriptionWrapper = styled.div`
   position: static;
   margin-top: 160%;
-  @media (min-width: 1080px) {
+  overflow-x: hidden;
+  @media (max-width: 769px) {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
   }
 `
 
@@ -114,9 +118,8 @@ const Description = () => {
       {/* The solution */}
       <DescribeWrapper>
         <Title>
-          The <span>Solution</span>
+          The <span>Solution</span> - It's <span>not too late!</span>
         </Title>
-        <Late id="late">It's not to late!</Late>
         <DescribeCenter>
           <Describe>
             If you have an existing life insurance plan, this can be written
@@ -162,7 +165,7 @@ const Description = () => {
       {/* Straight Forward & Quick */}
       <DescribeWrapper>
         <Title>
-          Straight Forward <span>& Quick</span>
+          Straightforward <span>& Quick</span>
         </Title>
         <DescribeCenter>
           <Describe>
@@ -200,7 +203,7 @@ const Description = () => {
       {/* Free Consolation */}
       <DescribeWrapper>
         <Title>
-          Free <span>Consolation</span>
+          Free <span>Life Insurance Check</span>
         </Title>
         <DescribeCenter>
           <Describe>
