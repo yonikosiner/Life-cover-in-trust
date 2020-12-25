@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import { Header } from "./header"
+import { Menu } from "../components/menu"
 import "./layout.css"
 import GlobalStyle from "./globalStyles"
 
@@ -27,10 +28,16 @@ const Layout = ({ children }) => {
   // }
   // // window.addEventListener("scroll", aboutSection, { passive: true })
   // window.onload = setHome
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        siteTitle={data.site.siteMetadata?.title || `Title`}
+      />
+      {isOpen && <Menu isOpen={isOpen} setIsOpen={setIsOpen} />}
       <div
         style={{
           margin: `0 auto`,

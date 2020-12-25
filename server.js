@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const app = express();
 // Port server is on
-const port = 3000;
+const port = 4000;
 // Get email to send to
 const EMAIL_SEND = process.env.EMAIL_SEND;
 // Get one time password for gmail to send email
