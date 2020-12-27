@@ -49,6 +49,9 @@ const Input = styled.input`
   }
   @media (min-width: 1080px) {
     margin-bottom: 24px;
+    &:hover {
+      transform: scale(1);
+    }
   }
 `
 

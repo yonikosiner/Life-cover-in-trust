@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-family: "Roboto", sans-serif;
         background-color: #1b1b1b !important;
-        color: #fff
+        color: #fff !important;
     }
     html {
         -moz-oxs-font-smoothing: grayscale;

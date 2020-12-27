@@ -18,10 +18,12 @@ const Main = styled.div`
   .btn-success:hover {
     background-color: green;
   }
+  @media (max-width: 1025px) {
+  }
 `
 
 const Description = styled.div`
-  flex: 1;
+  flex: 3;
   padding-right: 5rem;
   overflow: hidden;
   z-index: 2;
@@ -29,9 +31,12 @@ const Description = styled.div`
     color: #23d997;
     font-weight: 700;
   }
+  @media (max-width: 1025px) {
+    width: 100%;
+  }
 `
 const Img = styled.div`
-  flex: 1;
+  flex: 2;
   overflow: hidden;
   z-index: 2;
   img {
@@ -40,6 +45,9 @@ const Img = styled.div`
   }
   img:hover {
     transform: scale(0.9);
+  }
+  @media (max-width: 1025px) {
+    display: none;
   }
 `
 
@@ -82,7 +90,7 @@ export const Hero = () => {
         </div>
       </Description>
       <Img>
-        <img src={plantMoney} alt="" />
+        <img src={plantMoney} alt="image of money" />
       </Img>
     </Main>
   )
