@@ -36,6 +36,10 @@ const Img = styled.div`
   z-index: 2;
   img {
     object-fit: cover;
+    transition: 0.1s ease all;
+  }
+  img:hover {
+    transform: scale(0.9);
   }
 `
 

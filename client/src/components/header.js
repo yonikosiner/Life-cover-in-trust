@@ -28,13 +28,13 @@ export const Header = ({ isOpen, setIsOpen }) => {
     >
       {/* Checking to see if size is less than 1025px */}
       {size.width < 1025 && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            margin: "14px",
-          }}
-        >
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <p
+            className="navbar-brand"
+            style={{ textTransform: "uppercase", letterSpacing: "5px" }}
+          >
+            Life Cover <span style={{ color: "#23d997" }}>In Trust</span>
+          </p>
           <HamburgerMenu
             isOpen={isOpen}
             menuClicked={handleClick}
@@ -47,7 +47,7 @@ export const Header = ({ isOpen, setIsOpen }) => {
             animationDuration={0.4}
             className="burger"
           />
-        </div>
+        </nav>
       )}
       {/* Check to see if the size is bigger then 1025 */}
       {size.width > 1025 && (
