@@ -41,7 +41,7 @@ app.post("/contact", urlencodedParser, function (req, res) {
     const info = await transporter.sendMail({
       from: '"Yoni Kosiner" <ykosiner@gmail.com>', // sender address
       to: EMAIL_SEND, // list of receivers
-      subject: `Contact from life cover in trust from: ${req.body.name}`, // Subject line
+      subject: `${req.body.subject} | ${req.body.name}`, // Subject line
       text: `
 Name: ${req.body.name}
 Email: ${req.body.email}

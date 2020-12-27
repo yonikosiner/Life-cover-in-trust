@@ -2,14 +2,15 @@ import React from "react"
 import { Button } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import styled from "styled-components"
-import plantMoney from "../images/plant.jpg"
+import money from "../images/money.jpg"
 
 const Main = styled.div`
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 10rem;
+  padding: 10rem 10rem;
+  width: 70rem;
   color: white;
   overflow: hidden;
   .btn-success {
@@ -19,6 +20,8 @@ const Main = styled.div`
     background-color: green;
   }
   @media (max-width: 1025px) {
+    width: 30rem;
+    padding: 5rem 5rem;
   }
 `
 
@@ -34,17 +37,20 @@ const Description = styled.div`
   @media (max-width: 1025px) {
     width: 100%;
   }
+  h1 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    font-size: 34px;
+  }
 `
 const Img = styled.div`
-  flex: 2;
+  flex: 5;
   overflow: hidden;
   z-index: 2;
   img {
     object-fit: cover;
     transition: 0.1s ease all;
-  }
-  img:hover {
-    transform: scale(0.9);
   }
   @media (max-width: 1025px) {
     display: none;
@@ -66,7 +72,10 @@ export const Hero = () => {
   return (
     <Main>
       <Description>
-        <p>
+        <h1>
+          Life Cover <span>In Trust</span>
+        </h1>
+        <p style={{ textAlign: "justify" }}>
           It is <span>imperative</span> that life insurance is{" "}
           <span>put into trust</span> to ensure a <span>speedy payout</span> to
           who you want the lump sum to go to, <span>without any worry</span> of
@@ -90,7 +99,7 @@ export const Hero = () => {
         </div>
       </Description>
       <Img>
-        <img src={plantMoney} alt="image of money" />
+        <img src={money} alt="image of money" />
       </Img>
     </Main>
   )

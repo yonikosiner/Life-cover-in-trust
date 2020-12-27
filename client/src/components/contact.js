@@ -38,7 +38,6 @@ const Input = styled.input`
   border: none;
   outline: none;
   background-color: #3e3e3e;
-  box-shadow: 10px 10px 100px #d3cfcf;
   width: 300px;
   height: 48px;
   color: #fff;
@@ -61,7 +60,6 @@ const Message = styled.textarea`
   border: none;
   outline: none;
   background-color: #3e3e3e;
-  box-shadow: 10px 10px 100px #d3cfcf;
   width: 300px;
   height: 228px;
   color: #fff;
@@ -97,9 +95,10 @@ const Contact = () => {
         </Title>
       </TitleWrapper>
       <InputWrapper method="POST" action="http://localhost:3000/contact">
-        <Input type="text" name="name" placeholder="Name:" />
-        <Input type="email" name="email" placeholder="Email:" />
+        <Input type="text" name="name" placeholder="Full Name:" />
         <Input type="text" name="phone" placeholder="Phone:" />
+        <Input type="email" name="email" placeholder="Email:" />
+        <Input type="text" name="Subject" placeholder="Subject:" />
         <Message
           type="text"
           name="message"
