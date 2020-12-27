@@ -20,7 +20,6 @@ const Title = styled.h1`
     color: #23d997;
   }
 `
-
 const Describe = styled.p`
   text-align: justify;
   word-wrap: break-word;
@@ -35,11 +34,6 @@ const DescribeCenter = styled.div`
   display: flex;
 `
 
-const Late = styled.h1`
-  margin: 10px;
-  word-wrap: break-word;
-`
-
 const Description = () => {
   return (
     <DescriptionWrapper id="description">
@@ -48,6 +42,12 @@ const Description = () => {
         <Title>
           The <span>Problem</span>
         </Title>
+        <DescribeCenter>
+          <Describe>
+            Life insurance is used to provide a lump sum or in some cases a
+            regular income if you pass away during the plan term.
+          </Describe>
+        </DescribeCenter>
         <DescribeCenter>
           <Describe>
             The payout may be used to repay a mortgage, provide something for
@@ -131,8 +131,9 @@ const Description = () => {
         </DescribeCenter>
         <DescribeCenter>
           <Describe>
-            - From day one, the proceeds from the life insurance will be
-            ringfenced so that they fall outside of your estate
+            <input type="checkbox" name="" id="" /> From day one, the proceeds
+            from the life insurance will be ringfenced so that they fall outside
+            of your estate
           </Describe>
         </DescribeCenter>
         <DescribeCenter>
@@ -180,8 +181,8 @@ const Description = () => {
         </DescribeCenter>
         <DescribeCenter>
           <Describe>
-            - The trustees are the people you appoint to administer the trust
-            and pass on the monies to the beneficiaries.   It is usually best to
+            The trustees are the people you appoint to administer the trust and
+            pass on the monies to the beneficiaries. It is usually best to
             nominate two trustees, just in case you pass away with the first,
             which may be a spouse
           </Describe>
